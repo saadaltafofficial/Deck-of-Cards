@@ -17,12 +17,15 @@ async function fetchDeck() {
     console.log(deckId)
 }
 
-newDeckBtn.addEventListener("click", fetchDeck)
+newDeckBtn.addEventListener("click", (e) => {
+    e.preventDefault
+    drawCardBtn.disabled = false
+    fetchDeck()
+})
 
 drawCardBtn.addEventListener("click", async () => {
     const res = await fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
     const data = await res.json()
-    console.log(data)
     remainingTxtEl.textContent = `Remaining Cards: ${data.remaining}`
     cardDiv.children[0].innerHTML = `
         <img src="${data.cards[0].image}" alt=""/>

@@ -11,20 +11,21 @@ html, body {
 }
 
 main {
-    width: 100vw;
     height: 100vh;
-    background-color: brown;
-    display: flex;
+    background-color: green;
+    display:grid;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    text-align: center;
+    padding: 2em 2em;
 }
  
 .btn {
-    padding: .5em 1em;
+    padding: .5em 2em;
     font-size: 1rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: 600;
     font-family: inherit;
     cursor: pointer;
@@ -57,4 +58,12 @@ main {
 #header {
     font-size: 2rem;
     color: white;
+}
+
+@media screen and (max-width: 500px) {
+
+    #cardSlot img {
+        height: 200px;
+    }
+
 }
